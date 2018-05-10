@@ -1,0 +1,19 @@
+after attack a merchant there will be an segmentation fault
+
+dragon dead dragon hoard can be stepped on may cause an segmentation fault (fixed in v1.03)
+
+attack enemies they are not attack back
+
+no gold after enemy dead (fixed)
+
+did not set observer when attack (done)
+
+goblin does not steal (fixed)
+
+stair problem (fixed)
+
+pc death, end game
+
+clear map cause memory leak
+
+non player will step on DOP (fixed)

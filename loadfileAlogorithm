@@ -1,0 +1,53 @@
+/* THIS ALGORITHM IS FOR CONVERT MAPUNIT TO ROOMNO，FOR THE FIRST FUNCTION, FIND THE POINT TO START,
+   AND FOR THE SECOND FUNCTION IS TO FILL THE ROOM WITH ROOM NUMBER BY RECURSIVE CALL THE FUNCTION.
+   THE PURPOSE OF THE THIRD FUNCTION IS TO CONVERT ALL ROOM OF THE MAP TO ROOMNO BY LOOPING (FINDING
+   ALL POSSIBLE START POINTS, I HOPE YOU REALLY ENJOY IT!
+*/
+
+int* findStartPoint (char** map, int** roomNo, int height, int width) {
+	int temp = new int[2];	
+	for(int i = 0; i < height; i++){
+		for (int j = 0; j < width; ++j){
+			if (map[j][i] != '+' && map[j][i] != '#' && map[j][i] != '-' &&
+			    map[j][i] != '|' && map[j][i] != ' ' && roomNo[j][i] == 0){
+				if (j - 1 > -1 && i - 1 > -1){
+					if ( map[j][i - 1] == '-' && map[j - 1][i] == '|' &&){
+						temp[0] = j;
+						temp[1] = i;
+						return temp;
+					}
+				}
+			}
+		}
+	}
+	return nullptr;
+}
+
+void fillRoom(char ** map, int ** roomNo, int x, int y,  int num){
+	if (map[j][i] == '+' || map[j][i] == '#' || map[j][i] != '-' ||
+	    map[j][i] == '|' || map[j][i] == ' ') return;		
+	int[x][y] = roomNo;
+	fillRoom(char ** map, int ** roomNo, int x, int y,  int num);
+	fillRoom(char ** map, int ** roomNo, int x, int y,  int num);
+	fillRoom(char ** map, int ** roomNo, int x, int y,  int num);
+	fillRoom(char ** map, int ** roomNo, int x, int y,  int num);
+	fillRoom(char ** map, int ** roomNo, int x, int y,  int num);
+	fillRoom(char ** map, int ** roomNo, int x, int y,  int num);
+	fillRoom(char ** map, int ** roomNo, int x, int y,  int num);
+	fillRoom(char ** map, int ** roomNo, int x, int y,  int num);
+}
+
+void fillMap(char ** map, int ** roomNo, int height, int width){
+	for (int i = 1, *j = findStartPoint(map,height,width, roomNo); j ; 
+	     j = findStartPoint(map,height,width,roomNo)){
+		fillRoom(map, roomNo, j[0],j[1],i);
+		++ i;
+	}
+}
+
+// for testing..
+void printTwoDArray(int ** roomNo, int height, int length, ostream & out){}
+	
+	
+	
+		
