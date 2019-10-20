@@ -1,3 +1,5 @@
+NAME = cc3k
+
 CXX = g++
 CXXFLAGS = -g -std=c++11 -MMD -Wall
 EXEC = cc3k
@@ -9,6 +11,10 @@ ${EXEC}: ${OBJECT}
 	${CXX} ${CXXFLAGS} ${OBJECT} -o ${EXEC}
 
 -include ${DEPEND}
+
+run:
+	@echo "Running..."
+	./$(NAME)
 
 clean:
 	rm ${OBJECT} ${EXEC} ${DEPENDS} *.d
